@@ -1,0 +1,19 @@
+# Documentation : https://help.github.com/articles/ignoring-files/
+
+# Ignorer les dépendances
+node_modules/
+
+# Ignorer les fichiers de construction
+build/
+
+# Ignorer les fichiers système et autres fichiers temporaires
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignorer les journaux
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
