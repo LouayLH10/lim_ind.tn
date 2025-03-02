@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lim_ind.tn/static/css/main.ef0c4425.css",
-    "main.js": "/lim_ind.tn/static/js/main.8efb98ab.js",
+    "main.js": "/lim_ind.tn/static/js/main.5c8e76ed.js",
     "static/media/portrait-jeune-travailleur-dans-casque-dans-grande-usine-metallurgie.jpg": "/lim_ind.tn/static/media/portrait-jeune-travailleur-dans-casque-dans-grande-usine-metallurgie.46fd2a4596fc8e87f48e.jpg",
     "static/media/portrait-ingenieur-chantier-pendant-heures-travail.jpg": "/lim_ind.tn/static/media/portrait-ingenieur-chantier-pendant-heures-travail.3ad048f1a95281f9d6a5.jpg",
     "static/media/ouvrier-dans-usine.jpg": "/lim_ind.tn/static/media/ouvrier-dans-usine.6b36143f66acd1d7f8a4.jpg",
@@ -30,10 +30,10 @@
     "static/media/fa-v4compatibility.woff2": "/lim_ind.tn/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/lim_ind.tn/index.html",
     "main.ef0c4425.css.map": "/lim_ind.tn/static/css/main.ef0c4425.css.map",
-    "main.8efb98ab.js.map": "/lim_ind.tn/static/js/main.8efb98ab.js.map"
+    "main.5c8e76ed.js.map": "/lim_ind.tn/static/js/main.5c8e76ed.js.map"
   },
   "entrypoints": [
     "static/css/main.ef0c4425.css",
-    "static/js/main.8efb98ab.js"
+    "static/js/main.5c8e76ed.js"
   ]
 }
