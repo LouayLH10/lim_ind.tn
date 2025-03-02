@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Routes, Route, useLocation, useNavigate, Link} from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate, Link, Router} from 'react-router-dom';
 
 import PrivateRoute from './components/PrivateRoute'; // Importez le composant
 import Home from './components/home';
@@ -110,6 +110,7 @@ function App() {const [isChecked, setIsChecked] = useState(false);
       <div className="what" onClick={whatsapp}>
         <i className="fa-brands fa-whatsapp"></i>
       </div>
+      <Router>
       <Routes>
         {/* Routes publiques */}
         <Route path="/" element={<Home />} />
@@ -123,7 +124,7 @@ function App() {const [isChecked, setIsChecked] = useState(false);
         {/* Routes privées */}
         <Route path="/message_admin_lim" element={<PrivateRoute element={Boitemsg} />} />
       </Routes>
-  
+      </Router>
     </div>
   );
 }
