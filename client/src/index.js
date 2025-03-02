@@ -11,6 +11,5 @@ root.render(
         <App />
       </AuthProvider>
     </HashRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
