@@ -1,23 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Routes, Route, useLocation, useNavigate, Link, Router} from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate, Link } from 'react-router-dom';
 
-import PrivateRoute from './components/PrivateRoute'; // Importez le composant
+import PrivateRoute from './components/PrivateRoute'; // Assurez-vous que ce composant est bien conçu pour v6
 import Home from './components/home';
 import Propos from './components/APropos';
 import Gallery from './components/gallery';
 import Contact from './components/contact';
 import Login from './components/login';
-import Boitemsg from './components/boitemsg'  ;
+import Boitemsg from './components/boitemsg';
 import Loading from './components/Loading';
 import log from './img/logo_original.png';
-function App() {const [isChecked, setIsChecked] = useState(false);
+
+function App() {
+  const [isChecked, setIsChecked] = useState(false);
   const menRef = useRef(null);
   const sp = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Gestion du menu mobile
   useEffect(() => {
-    if (menRef.current) {
+    if (menRef.current && sp.current) {
       if (isChecked) {
         menRef.current.style.right = '0';
         sp.current.style.opacity = '1';
@@ -28,6 +31,7 @@ function App() {const [isChecked, setIsChecked] = useState(false);
     }
   }, [isChecked]);
 
+  // Défilement fluide en fonction du chemin
   useEffect(() => {
     const smoothScrollToSection = (selector) => {
       const section = document.querySelector(selector);
@@ -83,9 +87,9 @@ function App() {const [isChecked, setIsChecked] = useState(false);
           <div className="menu">
             <ul>
               <span className="headitems" ref={menRef}>
-              <Link to="/" onClick={() => { navigate('/');  }}>
-  <li>Accueil</li>
-</Link>
+                <Link to="/" onClick={() => handleNavigation('/')}>
+                  <li>Accueil</li>
+                </Link>
                 <Link to="/apropos" onClick={() => handleNavigation('/apropos')}>
                   <li>A Propos</li>
                 </Link>
@@ -110,7 +114,8 @@ function App() {const [isChecked, setIsChecked] = useState(false);
       <div className="what" onClick={whatsapp}>
         <i className="fa-brands fa-whatsapp"></i>
       </div>
-      <Router>
+      
+      {/* Suppression de <Router> ici car l'application doit être enveloppée dans le Router via index.js */}
       <Routes>
         {/* Routes publiques */}
         <Route path="/" element={<Home />} />
@@ -121,17 +126,26 @@ function App() {const [isChecked, setIsChecked] = useState(false);
         {/* Route de connexion */}
         <Route path="/lim_adm_connect" element={<Login />} />
 
-        {/* Routes privées */}
-        <Route path="/message_admin_lim" element={<PrivateRoute element={Boitemsg} />} />
+        {/* Route privée */}
+        <Route 
+          path="/message_admin_lim" 
+          element={
+            <PrivateRoute>
+              <Boitemsg />
+            </PrivateRoute>
+          } 
+        />
       </Routes>
-      </Router>
     </div>
   );
 }
-const scrl=()=>{
-  const props=document.querySelector(".Apropos");
-  props.scrollIntoView({ behavior: "smooth" });
- }
-  
-export {scrl};
+
+const scrl = () => {
+  const props = document.querySelector(".Apropos");
+  if (props) {
+    props.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+export { scrl };
 export default App;
